@@ -4,7 +4,7 @@ export type Data = {
   answer: string
 }
 
-const dataArray: Data[] = [
+const dataArray: Data[] =  [
     {
       "id": 1,
       "question": "What is the capital of France?",
