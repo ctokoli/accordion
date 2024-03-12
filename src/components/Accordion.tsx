@@ -11,6 +11,7 @@ export default function Accordion(): JSX.Element {
     }
   return (
     <div className="wrapper">
+        <button className="btn">Enable multi selection</button>
         <div className="accordion">
             { dataArray.length === 0  && (<div> No data Available </div>) }
             {dataArray.map((data) => (
@@ -18,13 +19,12 @@ export default function Accordion(): JSX.Element {
                     <div 
                         className="title" 
                         onClick={ () => handleSingleSeletion(data)}>
+                       <div className="head-title">
+                       { selected !== data.id ? <span className="icon">+</span> :  <span className="icon">-</span> }
                         <h3>{data.question}</h3>
-                        { selected !== data.id  && (
-                            <span>+</span>
-                        ) } 
+                       </div>
                         {selected === data.id && (
-                        <div className="">
-                            <span>-</span>
+                        <div className="content-wrapper">
                             <div className="content">{data.answer}</div>
                         </div>
                         )}
